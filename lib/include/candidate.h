@@ -2,17 +2,26 @@
 #define CANDIDATE_H
 
 #include <iostream>
+#include <vector>
+#include "term.h"
 using namespace std;
 
 
 class Candidate{
 
     public:
-    Candidate(string aname);
-    string get_name();
+    Candidate(int aid, int anum_terms, vector <float> ax);
+    int get_id(){return id;}
+    int get_num_terms(){return num_terms;}
+    vector<float> sum_all_terms();
+    
 
     private:
-    string name; 
+    int num_terms; 
+    int id;
+    vector <float> x;
+    vector<Term> terms; 
+    
 };
 
 
