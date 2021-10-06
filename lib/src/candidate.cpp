@@ -20,19 +20,21 @@ id{aid}, num_terms{anum_terms}, x{ax}
 };
 
 vector<float> Candidate::sum_all_terms(){
-    vector<float> y(x.size(), 0.0); 
+    vector<float> total_sum(x.size(), 0.); 
+
+    // gets vector of term values along x axis 
+    vector<float> term_sum; 
     for(int i = 0; i < num_terms; i++){
+        term_sum = terms[i].sum_term();
 
-        // Create vector of sum of the ith term
-        vector<float> term_sum = terms[i].sum_term(); 
-
+        // adds term to total (still a vector for each point along x axis)
         for(int j = 0; j < x.size(); j++){
-            // Elementwise addition of terms
-            y[j] = y[j] + term_sum[j];
+            total_sum[j] += term_sum[j]; 
         }
 
     }
-return y;}
+
+return total_sum;}
 
 
 

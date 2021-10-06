@@ -4,10 +4,8 @@ cmake_minimum_required(VERSION 3.11-3.18)
 
 project(lib)
 
-add_library(lib src/test.cpp
-src/candidate.cpp
+add_library(lib src/candidate.cpp
 src/term.cpp
-src/fitness.cpp
 src/generation.cpp)
 
 # PUBLIC needed to make both hello.h and hello library available elsewhere in project
