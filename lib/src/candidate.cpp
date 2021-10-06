@@ -7,10 +7,6 @@ using namespace std;
 Candidate::Candidate(int aid, int anum_terms, vector <float> ax):
 id{aid}, num_terms{anum_terms}, x{ax}
 {
-    // std::cout << "The candidate constructor has been called" << endl; 
-    // std::cout << num_terms << endl; 
-
-
     // Initialise Terms
     for(int i = 0; i < num_terms; i++){
 
@@ -36,7 +32,6 @@ vector<float> Candidate::sum_all_terms(){
         }
 
     }
-std::cout << y[800] << endl; 
 return y;}
 
 

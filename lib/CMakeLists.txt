@@ -6,7 +6,9 @@ project(lib)
 
 add_library(lib src/test.cpp
 src/candidate.cpp
-src/term.cpp)
+src/term.cpp
+src/fitness.cpp
+src/generation.cpp)
 
 # PUBLIC needed to make both hello.h and hello library available elsewhere in project
 target_include_directories(${PROJECT_NAME}
