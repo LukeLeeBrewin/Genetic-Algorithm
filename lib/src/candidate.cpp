@@ -2,11 +2,13 @@
 #include "candidate.h"
 #include <vector>
 #include <cstdlib>
+#include <random>
 using namespace std;
 
 Candidate::Candidate(int aid, int anum_terms, vector <float> ax):
 id{aid}, num_terms{anum_terms}, x{ax}
 {
+    
     // Initialise Terms
     for(int i = 0; i < num_terms; i++){
 
@@ -35,6 +37,27 @@ vector<float> Candidate::sum_all_terms(){
     }
 
 return total_sum;}
+
+vector<Term> Candidate::mutate_terms(int i ){
+
+    for(int i = 0; i < terms.size(); i++){
+
+    // Random number between 0 and 1
+    float random_number = rand() / double(RAND_MAX);
+
+    if(random_number < 0.5){
+        
+        terms[i].set_power();
+        terms[i].set_coeff();
+
+        //std::cout << "A term and power have been changed: " << endl;
+
+    }
+
+    }
+    
+    return terms;
+}
 
 
 

@@ -7,13 +7,16 @@
 #include <algorithm>
 #include "generation.h"
 #include <string>
-using namespace std; 
+#include <utility>
+
+
+
 
 
 int main(){
 
-    
-    // std::cout << "Hello World!" << endl; 
+   
+ 
 
     const int num_candidates = 10;
     const int num_generations = 100;
@@ -56,49 +59,22 @@ int main(){
 
 
 
-    vector<Generation> vec_of_generations;
 
-    Generation test{num_candidates, vec_candidates, y};
-    
-    vector<float> test_sorted_loss = test.get_sorted_loss();
 
-    for (int i = 0; i < test_sorted_loss.size(); i++){
-        std::cout << "Sorted Loss: " << test_sorted_loss[i] << endl;
+    Generation gens{num_candidates, vec_candidates, y};
+    for(int i = 0; i < num_generations; i++){
+
+        gens.get_sorted_loss();
+
+
+        // for(int j = 0; j < gens.get_current_candidates().size(); i++){
+        gens.mutate_candidates(); 
+        // }
+
     }
 
 
 
-
-
-
-
-
-
-    // vector<float> candidate_solution = vec_candidates[1].sum_all_terms(); 
-
-    // vector<float> temp_mae;
-    // float MAE[num_generations][num_candidates];
-
-    // for (int i = 0; i < num_candidates; i++){
-    //     temp_mae.push_back(fitness_function(y, vec_candidates[i].sum_all_terms()));
-    // }
-
-
-
-    // // This is probably rubbish
-    // sort(temp_mae.begin(), temp_mae.end());
-
-    // for(int i = 0; i < num_candidates; i++){
-    //     MAE[0][i] = temp_mae[i];
-    //     std::cout << MAE[0][i] << endl; 
-
-    //     // Takes top two candidates and puts them in the next generation
-    //     if(i < 2 && i !=num_generations-1){
-    //         MAE[1][i] = temp_mae[i];
-    //     }
-
-
-    // }
 
 
 }

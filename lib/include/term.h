@@ -13,6 +13,8 @@ class Term{
     Term(float acoeff, float apower, vector<float> ax);
     float get_coeff(){return coeff;}
     float get_power(){return power;}
+    float set_power();
+    float set_coeff();
     vector<float> sum_term();
 
 
